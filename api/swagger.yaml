@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  description: DVB-I Service List Query interface - B1
+  version: A177r3
+  title: DVB-I Service List Query interface - B1 
+paths:
+  /version:
+    get:
+      tags:
+        - ops
+      summary: Show version of the backend that is running
+      operationId: version
+      responses:
+        '200':
+          description: success
+  /query:
+    get:
+      tags:
+        - dvb-i-client
+      summary: DVB-I Service List Query interface - B1 
+      description: 'Respond to F1: Service List Discovery Query from DVB-I Client'
+      operationId: dvb_i_client_service_list_discovery_query
+      responses:
+        '200':
+          description: success
+          content:
+            appplication/xml:
+              schema:
+                $ref: '#/components/schemas/ServiceListEntryPoints'
+servers:
+  - url: /api/A177r3
+components:
+  schemas:
+    ServiceListEntryPoints:
+      type: object
+      properties:
+        ServiceListRegistryEntity:
+          type: string
+        ProviderOffering:
+          type: string
+        Extension:
+          type: string
+    ServiceList:
+      type: object
+      properties:
+        UniqueIdentifier:
+          type: string
+        ServiceName:
+          type: string
+        ProviderName:
+          type: string
+        ServiceType:
+          type: string
+    ProviderOffering:
+      type: object
+      properties:
+        id:
+          type: string
+
