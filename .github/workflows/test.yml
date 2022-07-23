@@ -7,15 +7,14 @@ on:
 
 jobs:
   deploy:
-    name: Deploy
+    name: test
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
+    - name: checkout
       uses: actions/checkout@v2
 
-    - name: Run tests
+    - name: run tests
       run: |
-        cd management-server/backend
         npm install
         npm test
