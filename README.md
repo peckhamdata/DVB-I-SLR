@@ -1,5 +1,8 @@
 # A node.js DVB-I Service List Registry
 
+![Tests](https://github.com/peckhamdata/DVB-I-SLR/actions/workflows/test.yml/badge.svg)
+
+
 ## About
 
 Implementation of the [DVB-I](https://dvb-i.tv/) Service List Query interface - B1
